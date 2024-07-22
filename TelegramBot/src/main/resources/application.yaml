@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: TelegramBot
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ai_telegram_bot
+    username: postgres
+    password: 1212
+    driver-class-name: org.postgresql.Driver
+
+server:
+  port: 8090
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+  instance:
+    hostname: localhost
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: DEBUG
+        discovery: DEBUG
+    org:
+      spring:
+        boot:
+          cloud:
+            netflix:
+              eureka: DEBUG
